@@ -13,18 +13,18 @@ import com.en.jewelleryassistantbot.telegram.WriteReadBot;
 public class SpringConfig {
     private final TelegramConfiguration telegramConfig;
 
-    @Bean
-    public SetWebhook setWebhookInstance() {
-        return SetWebhook.builder().url(telegramConfig.getWebhookPath()).build();
-    }
+//    @Bean
+//    public SetWebhook setWebhookInstance() {
+//        return SetWebhook.builder().url(telegramConfig.getWebhookPath()).build();
+//    }
 
     @Bean
-    public WriteReadBot springWebhookBot(SetWebhook setWebhook,
+    public WriteReadBot springWebhookBot(/**SetWebhook setWebhook,*/
                                          MessageHandler messageHandler,
                                          CallbackQueryHandler callbackQueryHandler) {
-        WriteReadBot bot = new WriteReadBot(setWebhook, messageHandler, callbackQueryHandler);
+        WriteReadBot bot = new WriteReadBot(/**setWebhook,*/ messageHandler, callbackQueryHandler);
 
-        bot.setBotPath(telegramConfig.getWebhookPath());
+//        bot.setBotPath(telegramConfig.getWebhookPath());
         bot.setBotUsername(telegramConfig.getBotName());
         bot.setBotToken(telegramConfig.getBotToken());
 

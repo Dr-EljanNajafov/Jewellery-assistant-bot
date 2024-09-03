@@ -21,7 +21,7 @@ import java.io.IOException;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class WriteReadBot extends SpringWebhookBot {
+public class WriteReadBot /**extends SpringWebhookBot*/ {
     String botPath;
     String botUsername;
     String botToken;
@@ -29,13 +29,13 @@ public class WriteReadBot extends SpringWebhookBot {
     MessageHandler messageHandler;
     CallbackQueryHandler callbackQueryHandler;
 
-    public WriteReadBot(SetWebhook setWebhook, MessageHandler messageHandler, CallbackQueryHandler callbackQueryHandler) {
-        super(setWebhook);
+    public WriteReadBot(/**SetWebhook setWebhook,*/ MessageHandler messageHandler, CallbackQueryHandler callbackQueryHandler) {
+//        super(setWebhook);
         this.messageHandler = messageHandler;
         this.callbackQueryHandler = callbackQueryHandler;
     }
 
-    @Override
+//    @Override
     public BotApiMethod<?> onWebhookUpdateReceived(Update update) {
         try {
             return handleUpdate(update);

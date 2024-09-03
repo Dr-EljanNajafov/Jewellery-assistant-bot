@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TelegramConfiguration {
-    @Value("${telegram.webhook-path}")
-    String webhookPath;
+//    @Value("${telegram.webhook-path}")
+//    String webhookPath;
     @Value("${telegram.bot-name}")
     String botName;
     @Value("${telegram.bot-token}")
